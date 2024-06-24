@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -21,6 +21,7 @@ export class ViewFolderComponent implements OnInit {
 
 
   constructor(
+    private _router:Router,
     private fb: FormBuilder,
     private dialog: MatDialog,
     private route: ActivatedRoute){
@@ -232,6 +233,15 @@ export class ViewFolderComponent implements OnInit {
     }));
   }
 
+  validateFolder(){
+    Swal.fire({
+      icon: 'success',
+      title: 'Success',
+      text: 'Dossier validé avec succès',
+      timer: 3000
+    });
+    window.location.reload();
+  }
   generateImageUrl(id: string){
 
   }
