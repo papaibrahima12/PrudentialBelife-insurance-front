@@ -1,0 +1,86 @@
+<form method="post" [formGroup]="addUserForm">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="prenom">Prenom</label>
+        <input formControlName="prenom" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Prenom">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input formControlName="nom" type="text" placeholder="Nom" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="gender">Genre</label>
+        <select formControlName="genre" class="form-control" id="exampleFormControlSelect1">
+          <option *ngFor="let gender of genders" value="{{gender}}" >{{gender}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input formControlName="adresse" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Adresse">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="nom">Telephone</label>
+        <input formControlName="telephone" type="number" placeholder="Telephone" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="gender">Role</label>
+        <select formControlName="role" class="form-control" id="exampleFormControlSelect1">
+          <option *ngFor="let role of roles" value="{{role}}" >{{role}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+          </div>
+          <input formControlName="email" class="form-control" placeholder="Email" type="email">
+          <div class="alert alert-danger" role="alert" *ngIf="f.email.errors">
+            Email is required!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="password">Mot de Passe</label>
+        <div class="input-group mb-4">
+          <input formControlName="password" [type]="hide ? 'password' : 'text'" class="form-control" placeholder="mot de passe">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="password">Confirmation Mot de Passe</label>
+        <div class="input-group mb-4">
+          <input formControlName="new_password" [type]="hide ? 'password' : 'text'" class="form-control" placeholder="repetez le mot de passe">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+      <button type="button" class="btn btn-info float-right" >Save</button>
+      <button type="button" class="btn btn-danger float-right mr-2" mat-dialog-close>Close</button>
+  </div>
+</form>

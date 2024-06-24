@@ -1,0 +1,5 @@
+{
+    "angular.enable-strict-mode-prompt": false,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "analyticsdx-vscode-core.CLI.checkForPlugin": false
+}

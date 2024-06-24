@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://simeds-backk.onrender.com/",
+    "secure": false
+  }
+}
