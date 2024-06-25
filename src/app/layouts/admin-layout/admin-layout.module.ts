@@ -22,6 +22,7 @@ import { AddFolderComponent } from 'src/app/pages/users/folders/add-folder/add-f
 import { ViewFolderComponent } from 'src/app/pages/users/folders/view-folder/view-folder.component';
 import { DeleteFolderComponent } from 'src/app/pages/users/folders/delete-folder/delete-folder.component';
 import { UserService } from 'src/app/services/user.service';
+import { DetailsMotifComponent } from 'src/app/pages/users/folders/details-motif/details-motif.component';
 // import { ToastrModule } from 'ngx-toastr';
 // import {
 //   MatFormFieldModule,
@@ -54,6 +55,7 @@ import { UserService } from 'src/app/services/user.service';
     AddFolderComponent,
     ViewFolderComponent,
     DeleteFolderComponent,
+    DetailsMotifComponent
   ],
   providers:[UserService]
 })

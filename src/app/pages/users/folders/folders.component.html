@@ -2,9 +2,9 @@
     <div class="container-fluid">
       <div class="header-body">
         <div class="col-auto float-right mt-4">
-          <div class="icon icon-shape bg-danger text-white rounded-circle shadow" style="cursor: pointer;" (click)="openDialog()">
+          <!-- <div class="icon icon-shape bg-danger text-white rounded-circle shadow" style="cursor: pointer;" (click)="openDialog()">
             <i class="fas fa-plus"></i>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -15,6 +15,9 @@
       <div class="col-xl-4 col-lg-6" >
         <div class="card" style="width: 15rem;">
           <img class="card-img-top" src="../../../../assets/img/prudential_logo.jpg" alt="Card image cap">
+          <div class="text-right pr-2">
+            <span class="btn btn-sm btn-primary">{{status}}</span>
+          </div>
           <div class="card-body">
             <h5 class="card-title">Numero Dossier : 12763762676</h5>
             <h6 class="card-text"></h6>

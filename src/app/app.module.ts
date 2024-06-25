@@ -30,7 +30,7 @@ import { AuthInterceptorInterceptor } from './_helpers/auth-interceptor.intercep
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
   ],
   providers: [
     {

@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { DetailsMotifComponent } from '../details-motif/details-motif.component';
 
 @Component({
   selector: 'app-view-folder',
@@ -17,14 +18,15 @@ export class ViewFolderComponent implements OnInit {
   insuranceForm: FormGroup;
   date = new Date();
   someDetails : any [] = [];
-
-
+  statusDossier: string = '';
 
   constructor(
-    private _router:Router,
     private fb: FormBuilder,
     private dialog: MatDialog,
-    private route: ActivatedRoute){
+    private route: ActivatedRoute,
+    public dialogRef: MatDialogRef<ViewFolderComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any){
+      this.statusDossier = data.status;
       this.route.params.subscribe(params => {
         const folderIdFromRoute = params['id'];
         this.folderId = folderIdFromRoute;
@@ -36,64 +38,64 @@ export class ViewFolderComponent implements OnInit {
       this.someDetails =  [
         {
           "nature": "Avez-vous été malade au cours des 5 dernières années ?",
-          "isTrue": true,
-          "Précisez": "Grippe saisonnière",
+          "isTrue": 'oui',
+          "precision": "Grippe saisonnière",
           "dateTraitement": "2021-03-15",
           "lieuTraitement": "Clinique Saint-Martin"
         },
         {
           "nature": "Toussez-vous depuis quelques temps avec en plus de la fièvre ?",
-          "isTrue": false,
-          "Précisez": "",
+          "isTrue": 'non',
+          "precision": "",
           "dateTraitement": "",
           "lieuTraitement": ""
         },
         {
           "nature": "Faites-vous souvent la diarrhée ?",
-          "isTrue": false,
-          "Précisez": "",
+          "isTrue": 'non',
+          "precision": "",
           "dateTraitement": "",
           "lieuTraitement": ""
         },
         {
           "nature": "Avez-vous déjà reçu une transfusion de sang ?",
-          "isTrue": true,
-          "Précisez": "Accident de voiture",
+          "isTrue": 'oui',
+          "precision": "Accident de voiture",
           "dateTraitement": "2019-08-22",
           "lieuTraitement": "Hôpital Général"
         },
         {
           "nature": "Êtes-vous enceinte ?",
-          "isTrue": false,
-          "Précisez": "",
+          "isTrue": 'non',
+          "precision": "",
           "dateTraitement": "",
           "lieuTraitement": ""
         },
         {
           "nature": "Souffrez-vous d'une fatigue prolongée ?",
-          "isTrue": true,
-          "Précisez": "Anémie",
+          "isTrue": 'oui',
+          "precision": "Anémie",
           "dateTraitement": "2022-07-10",
           "lieuTraitement": "Centre Médical Universitaire"
         },
         {
           "nature": "Souffrez-vous d'une de ces pathologies suivantes : Maladie Cardiovasculaire, VIH, Maladie de sang",
-          "isTrue": false,
-          "Précisez": "",
+          "isTrue": 'non',
+          "precision": "",
           "dateTraitement": "",
           "lieuTraitement": ""
         },
         {
           "nature": "Souffrez-vous d'une de ces pathologies suivantes : Ulcère, maladie psychique, maladie du système nerveux",
-          "isTrue": true,
-          "Précisez": "Ulcère",
+          "isTrue": 'oui',
+          "precision": "Ulcère",
           "dateTraitement": "2023-05-30",
           "lieuTraitement": "Clinique du Parc"
         },
         {
           "nature": "Avez-vous des informations complémentaires sur votre état de santé susceptible de renseigner l'Assureur ?",
-          "isTrue": true,
-          "Précisez": "Asthme léger",
+          "isTrue": 'oui',
+          "precision": "Asthme léger",
           "dateTraitement": "2020-11-15",
           "lieuTraitement": "Centre de Santé Communal"
         }
@@ -171,7 +173,7 @@ export class ViewFolderComponent implements OnInit {
         accountNumber: ['1234567890'],
       }),
     });
-    console.log('form : ',this.insuranceForm.get('suscriber'));
+    console.log('form : ',this.insuranceForm.value.agency);
     // this.fetchedDossiersById(this.folderId);
   }
 
@@ -240,10 +242,26 @@ export class ViewFolderComponent implements OnInit {
       text: 'Dossier validé avec succès',
       timer: 3000
     });
-    window.location.reload();
+    this.statusDossier = 'Validé';
+    this.dialogRef.close(this.statusDossier);
   }
-  generateImageUrl(id: string){
 
+  openMotifModal(){
+    const dialogRef =  this.dialog.open(DetailsMotifComponent, {
+      data: {status: this.statusDossier }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.statusDossier = result;
+        this.dialog.closeAll();
+        console.log('Dialog closed with status:', this.statusDossier);
+      }
+    });
+  }
+
+  getStatus(): string{
+    return this.statusDossier;
   }
 
 }

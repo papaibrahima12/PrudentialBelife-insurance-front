@@ -13,6 +13,8 @@ export class FoldersComponent implements OnInit {
 
   folders: any;
   patientsNames:any;
+  viewCom: ViewFolderComponent
+  status: string = 'En traitement';
 
   constructor(private dialog: MatDialog, private router:Router){}
   ngOnInit() {
@@ -37,8 +39,16 @@ export class FoldersComponent implements OnInit {
   viewDetails(){
     // const selectedFolder = this.folders.find(folder => folder._id === folderId);
     // if (selectedFolder) {
-      this.dialog.open(ViewFolderComponent, {
-        autoFocus: true
+     const dialogRef = this.dialog.open(ViewFolderComponent, {
+        autoFocus: true,
+        data: {status: this.status }
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.status = result;
+          console.log('Dialog closed with status:', this.status);
+        }
       });
     }
 
