@@ -493,17 +493,15 @@
       </section>
     </div>
 
-    <div>
+    <div *ngIf="statusDossier === 'En traitement'">
       <button
         type="button"
-        [disabled]="statusDossier === 'Validé' || statusDossier === 'Rejeté'"
         class="btn btn-info float-right"
         (click)="validateFolder()">
         Valider
       </button>
       <button
         type="button"
-        [disabled]="statusDossier === 'Validé' || statusDossier === 'Rejeté'"
         class="btn btn-danger float-right mr-2"
         (click)="openMotifModal()">
         Rejeter
