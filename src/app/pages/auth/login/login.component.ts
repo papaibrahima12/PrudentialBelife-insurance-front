@@ -51,13 +51,13 @@ export class LoginComponent implements OnInit {
     }
     // Required always comes first
     if (control.hasError('required')) {
-      return "Cannot be empty";
+      return "ce champs est requis";
     }
     if (control.hasError('email')) {
-      return "Must be a valid email";
+      return "l'email doit etre valide";
     }
     if (control.hasError("password")) {
-      return "Must be a valid password";
+      return "le mot de passe doit etre valide";
     }
   }
 
@@ -80,19 +80,19 @@ export class LoginComponent implements OnInit {
     if(response) {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        Swal.fire({
-          icon: 'success',
-          title: 'Success',
-          text: 'Connexion réussie avec succès',
-          timer: 1000
-        });
-        console.log('user', response);
+        // Swal.fire({
+        //   icon: 'success',
+        //   title: 'Success',
+        //   text: 'Connexion réussie avec succès',
+        //   timer: 1000
+        // });
+        // console.log('user', response);
         this._router.navigateByUrl('home/dashboardAdmin');
         }else {
           Swal.fire({
             icon: 'error',
             title: 'Erreur',
-            text: 'Login / Mot de passe incorrects',
+            text: 'Login et/ou Mot de passe incorrects',
             timer: 1000
           });
           console.log('Erreur de traitement !');
