@@ -37,9 +37,15 @@ export class DetailsMotifComponent implements OnInit {
       title: 'Success',
       text: 'Dossier rejeté avec succès',
       timer: 2000
+    }).then(() => {
+      this.statusDossier = 'Rejeté';
+      this.dialogRef.close(this.statusDossier);
+      this.dialogRef.afterClosed().subscribe(() => {
+        if (this.data.parentDialogRef) {
+          this.data.parentDialogRef.close(this.statusDossier);
+        }
+      });
     });
-    this.statusDossier = 'Rejeté';
-    this.dialogRef.close(this.statusDossier);
   }
 
   updateStatusButton(): void {

@@ -16,7 +16,15 @@
         <div class="card" style="width: 15rem;">
           <img class="card-img-top" src="../../../../assets/img/prudential_logo.jpg" alt="Card image cap">
           <div class="text-right pr-2">
-            <span class="btn btn-sm btn-primary">{{status}}</span>
+            <div *ngIf="status === 'En traitement'">
+              <span class="btn btn-sm btn-warning">{{status}}</span>
+            </div>
+            <div *ngIf="status === 'Validé'">
+              <span class="btn btn-sm btn-success">{{status}}</span>
+            </div>
+            <div *ngIf="status === 'Rejeté'">
+              <span class="btn btn-sm btn-danger">{{status}}</span>
+            </div>
           </div>
           <div class="card-body">
             <h5 class="card-title">Numero Dossier : 12763762676</h5>

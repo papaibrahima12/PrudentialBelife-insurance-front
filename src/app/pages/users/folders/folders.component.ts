@@ -41,7 +41,7 @@ export class FoldersComponent implements OnInit {
     // if (selectedFolder) {
      const dialogRef = this.dialog.open(ViewFolderComponent, {
         autoFocus: true,
-        data: {status: this.status }
+        data: {status: this.status, parentDialogRef: this.dialog }
       });
 
       dialogRef.afterClosed().subscribe(result => {

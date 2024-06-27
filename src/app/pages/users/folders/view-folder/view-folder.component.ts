@@ -248,14 +248,14 @@ export class ViewFolderComponent implements OnInit {
 
   openMotifModal(){
     const dialogRef =  this.dialog.open(DetailsMotifComponent, {
-      data: {status: this.statusDossier }
+      data: {status: this.statusDossier, parentDialogRef: this.dialogRef }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.statusDossier = result;
-        this.dialog.closeAll();
         console.log('Dialog closed with status:', this.statusDossier);
+        this.dialogRef.close(this.statusDossier);
       }
     });
   }
