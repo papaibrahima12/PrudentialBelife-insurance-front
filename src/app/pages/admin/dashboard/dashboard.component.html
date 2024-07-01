@@ -9,17 +9,17 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Nombre de dossiers</h5>
-                  <span class="h2 font-weight-bold mb-0">350,897</span>
+                  <span class="h2 font-weight-bold mb-0">1</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                    <i class="fas fa-chart-bar"></i>
+                    <i class="fas fa-folder"></i>
                   </div>
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                <span class="text-nowrap">Since last month</span>
+                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 100%</span>
+                <span class="text-nowrap">Depuis le mois dernier</span>
               </p>
             </div>
           </div>
@@ -30,17 +30,17 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Nombre d'agents</h5>
-                  <span class="h2 font-weight-bold mb-0">2,356</span>
+                  <span class="h2 font-weight-bold mb-0">1</span>
                 </div>
                 <div class="col-auto">
-                  <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                    <i class="fas fa-chart-pie"></i>
+                  <div class="icon icon-shape bg-primary text-white rounded-circle shadow">
+                    <i class="fas fa-users"></i>
                   </div>
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                <span class="text-nowrap">Since last week</span>
+                <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i>0%</span>
+                <span class="text-nowrap">Depuis la semaine passée</span>
               </p>
             </div>
           </div>
@@ -50,8 +50,8 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                  <span class="h2 font-weight-bold mb-0">924</span>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Nombre d'assurés</h5>
+                  <span class="h2 font-weight-bold mb-0">1</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -60,8 +60,8 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                <span class="text-nowrap">Since yesterday</span>
+                <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i>0%</span>
+                <span class="text-nowrap">Depuis hier</span>
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Souscriptions</h5>
                   <span class="h2 font-weight-bold mb-0">49,65%</span>
                 </div>
                 <div class="col-auto">
@@ -82,7 +82,7 @@
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
                 <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                <span class="text-nowrap">Since last month</span>
+                <span class="text-nowrap">Depuis le mois dernier</span>
               </p>
             </div>
           </div>
@@ -98,20 +98,20 @@
         <div class="card-header bg-transparent">
           <div class="row align-items-center">
             <div class="col">
-              <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-              <h2 class="text-white mb-0">Sales value</h2>
+              <h6 class="text-uppercase text-light ls-1 mb-1">Vue Globale</h6>
+              <h2 class="text-white mb-0">Recettes</h2>
             </div>
             <div class="col">
               <ul class="nav nav-pills justify-content-end">
                 <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[0];updateOptions()">
                   <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false">
-                    <span class="d-none d-md-block">Month</span>
+                    <span class="d-none d-md-block">Mois</span>
                     <span class="d-md-none">M</span>
                   </a>
                 </li>
                 <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">
                   <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">
-                    <span class="d-none d-md-block">Week</span>
+                    <span class="d-none d-md-block">Semaine</span>
                     <span class="d-md-none">W</span>
                   </a>
                 </li>
@@ -134,7 +134,7 @@
           <div class="row align-items-center">
             <div class="col">
               <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-              <h2 class="mb-0">Total orders</h2>
+              <h2 class="mb-0">Dossiers</h2>
             </div>
           </div>
         </div>

@@ -3,3 +3,24 @@
   overflow-y: auto;
   padding-right: 15px; /* Add some padding for better scroll visibility */
 }
+
+.close-icon{
+  float: right;
+  top:-24px;
+  right:-24px;
+  padding: 5px;
+  line-height: 14px;
+  min-width: auto;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #000;
+  z-index: 1050;
+}
+
+@media (max-width: 576px) {
+  .close-icon {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.25rem;
+  }
+}

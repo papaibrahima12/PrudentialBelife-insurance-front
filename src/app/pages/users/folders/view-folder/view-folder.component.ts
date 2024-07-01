@@ -4,6 +4,8 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { DetailsMotifComponent } from '../details-motif/details-motif.component';
+import { ViewPieceComponent } from '../view-piece/view-piece.component';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-view-folder',
@@ -12,6 +14,7 @@ import { DetailsMotifComponent } from '../details-motif/details-motif.component'
 })
 export class ViewFolderComponent implements OnInit {
 
+  faTimes = faTimes;
   fetchedDossier : any;
   folderId: any;
   patientName : string;
@@ -262,6 +265,12 @@ export class ViewFolderComponent implements OnInit {
 
   getStatus(): string{
     return this.statusDossier;
+  }
+
+  openPiece(){
+    this.dialog.open(ViewPieceComponent,{
+      autoFocus:true,
+    })
   }
 
 }

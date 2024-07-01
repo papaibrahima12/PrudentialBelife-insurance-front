@@ -23,6 +23,8 @@ import { ViewFolderComponent } from 'src/app/pages/users/folders/view-folder/vie
 import { DeleteFolderComponent } from 'src/app/pages/users/folders/delete-folder/delete-folder.component';
 import { UserService } from 'src/app/services/user.service';
 import { DetailsMotifComponent } from 'src/app/pages/users/folders/details-motif/details-motif.component';
+import { ViewPieceComponent } from 'src/app/pages/users/folders/view-piece/view-piece.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { ToastrModule } from 'ngx-toastr';
 // import {
 //   MatFormFieldModule,
@@ -44,7 +46,8 @@ import { DetailsMotifComponent } from 'src/app/pages/users/folders/details-motif
     MatIconModule,
     MatSelectModule,
     MatRadioModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FontAwesomeModule
   ],
   declarations: [
     DashboardComponent,
@@ -55,7 +58,9 @@ import { DetailsMotifComponent } from 'src/app/pages/users/folders/details-motif
     AddFolderComponent,
     ViewFolderComponent,
     DeleteFolderComponent,
-    DetailsMotifComponent
+    DetailsMotifComponent,
+    ViewPieceComponent
+
   ],
   providers:[UserService]
 })
