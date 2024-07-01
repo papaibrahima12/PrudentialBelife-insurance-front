@@ -14,6 +14,8 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AuthInterceptorInterceptor } from './_helpers/auth-interceptor.interceptor';
+import { ViewPieceComponent } from './pages/users/folders/view-piece/view-piece.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
